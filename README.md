@@ -6,7 +6,8 @@ to better compress articles
 using Zipf law
 ## Name: 
 Fz ( my proposal is the file extension to be fzt )
-Description: In an article, the 128 most common words represents about the half of the article.
+## Description: 
+In an article, the 128 most common words represents about the half of the article.
 If we represent these words and their trailing space, with a number 0-127 in ascii text or 0-32767 in utf8 and a marker then we will save a lot of space for other compression methods.
 ## Header: 
 In the header we should refer the text language.
