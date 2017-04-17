@@ -19,21 +19,23 @@
 Usage: fz --{compress|decompress} [--dictionary dictionary] filename
 dictionary is a 2 column csv file. See matrix.csv
 
-
 Work to come:
 a) Compression: input a text file and ouput a fzt one according to usage
-b) Decompression: decompress a file to its original state
+b) Decompression: decompress a file to its original state (read first 5 characters 
+and extract the text language
 c) fz should be used as a pipe 
-
+d) Localize to specific languages by providing an appropriate matrix.csv dictionary
+e) translate it to other more appropriate programming languages as C/C++ for better performance
 */
+$language="en";
 $file="matrix.csv";
 $csv= file_get_contents($file);
 $array0 = array_map("str_getcsv", explode("\n", $csv));
 $file="article.txt";
 $article= file_get_contents($file);
-$outp="FZTen;";
+$outp="FZ${language}T";
 foreach (explode("\n", $article) as $keya => $vala ) {
-    $array=preg_split('/[\s,]+/',$vala);
+  $array=preg_split('/[\s,]+/',$vala);
   foreach ( $array as $key => $val ) {
     $found=false;
     foreach ( $array0 as $key0 => $val0 ) {
@@ -49,7 +51,7 @@ foreach (explode("\n", $article) as $keya => $vala ) {
     if(!$found) $outp.= $val;
     $outp.=" ";
   }
-    $outp.="\n";
+  $outp.="\n";
 }
 $outfile="article.fzt";
 file_put_contents($outfile, $outp);
