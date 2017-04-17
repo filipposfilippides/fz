@@ -1,12 +1,16 @@
 # fz
 article compression method Fz
-Target: to better compress articles
-Method: using Zipf law
-Name: Fz ( my proposal is the file extension to be fzt )
+## Target: 
+to better compress articles
+## Method: 
+using Zipf law
+## Name: 
+Fz ( my proposal is the file extension to be fzt )
 Description: In an article, the 128 most common words represents about the half of the article.
 If we represent these words and their trailing space, with a number 0-127 in ascii text or 0-32767 in utf8 and a marker then we will save a lot of space for other compression methods.
-Header: In the header we should refer the text language.
-Example:
+## Header: 
+In the header we should refer the text language.
+## Example:
 
     Alice was published in 1865, three years after Charles Lutwidge Dodgson and the Reverend Robinson Duckworth rowed a boat up the Isis on 4 July 1862[3] (this popular date of the "golden afternoon"[4] might be a confusion or even another Alice-tale, for that particular day was cool, cloudy, and rainy[5]) with the three young daughters of Henry Liddell (the Vice-Chancellor of Oxford University and Dean of Christ Church): Lorina Charlotte Liddell (aged 13, born 1849, "Prima" in the book's prefatory verse); Alice Pleasance Liddell (aged 10, born 1852, "Secunda" in the prefatory verse); Edith Mary Liddell (aged 8, born 1853, "Tertia" in the prefatory verse).[6]
 
@@ -19,12 +23,13 @@ Example:
     But before Alice received her copy, Dodgson was already preparing it for publication and expanding the 15,500-word original to 27,500 words,[10] most notably adding the episodes about the Cheshire Cat and the Mad Tea-Party.
 
 
-Summary:
+## Summary:
 The text above, extracted from Wikipedia article, in ascii was 2230 characters long and after 7z LZMA compression 1327 chars.
 After Fz, the text is now 2106 characters long and after 7z LZMA compression is 1288 chars.
 So, Fz compression is about 5.56% more efficient when comes to text and 2.94% better when used in 7z LZMA.
 
-Program in PHP: (matrix.csv constructed using the table in http://world-english.org/english500.htm using only 128 words in an array)
+## Program in PHP: 
+(matrix.csv constructed using the table in http://world-english.org/english500.htm using only 128 words in an array)
 
     <?php
     $file="matrix.csv";
@@ -57,7 +62,7 @@ Program in PHP: (matrix.csv constructed using the table in http://world-english.
     ?>
 
 
-License GNU/GPL3 :
+## License GNU/GPL3 :
 
 Copyright (C) 2017  Filippos Filippides
 
