@@ -1,0 +1,14 @@
+*.log
+*.zip
+
+tmp/
+backup/
+lib/
+js/jQuery/
+css/
+analysis/
+images/
+bootstrap/
+lang/
+export/
+templates/?/
